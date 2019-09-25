@@ -30,55 +30,153 @@ namespace CatalogParser
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.components = new System.ComponentModel.Container();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.label1 = new System.Windows.Forms.Label();
+            this.FileNameField = new System.Windows.Forms.TextBox();
+            this.OpenFileBtn = new System.Windows.Forms.Button();
+            this.ItemNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Quantity = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.StoreType = new System.Windows.Forms.ComboBox();
+            this.fileParseSettingModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.City = new System.Windows.Forms.TextBox();
+            this.SaveBtn = new System.Windows.Forms.Button();
+            this.DelBtn = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.fileParseSettingModelBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 8);
+            this.label1.Location = new System.Drawing.Point(3, 6);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Файл:";
+            // 
+            // FileNameField
+            // 
+            this.FileNameField.Location = new System.Drawing.Point(44, 3);
+            this.FileNameField.Name = "FileNameField";
+            this.FileNameField.Size = new System.Drawing.Size(100, 20);
+            this.FileNameField.TabIndex = 1;
+            // 
+            // OpenFileBtn
+            // 
+            this.OpenFileBtn.Location = new System.Drawing.Point(150, 3);
+            this.OpenFileBtn.Name = "OpenFileBtn";
+            this.OpenFileBtn.Size = new System.Drawing.Size(32, 20);
+            this.OpenFileBtn.TabIndex = 2;
+            this.OpenFileBtn.Text = ". . .";
+            this.OpenFileBtn.UseVisualStyleBackColor = true;
+            this.OpenFileBtn.Click += new System.EventHandler(this.OpenFile_Click);
+            // 
+            // ItemNo
+            // 
+            this.ItemNo.Location = new System.Drawing.Point(245, 3);
+            this.ItemNo.Name = "ItemNo";
+            this.ItemNo.Size = new System.Drawing.Size(40, 20);
+            this.ItemNo.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(319, 29);
+            this.label2.Location = new System.Drawing.Point(188, 6);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Артикул:";
             // 
-            // textBox2
+            // Quantity
             // 
-            this.textBox2.Location = new System.Drawing.Point(174, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
+            this.Quantity.Location = new System.Drawing.Point(366, 3);
+            this.Quantity.Name = "Quantity";
+            this.Quantity.Size = new System.Drawing.Size(40, 20);
+            this.Quantity.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(291, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Количество:";
+            // 
+            // StoreType
+            // 
+            this.StoreType.DataSource = this.fileParseSettingModelBindingSource;
+            this.StoreType.DisplayMember = "FilePath";
+            this.StoreType.FormattingEnabled = true;
+            this.StoreType.Location = new System.Drawing.Point(412, 3);
+            this.StoreType.Name = "StoreType";
+            this.StoreType.Size = new System.Drawing.Size(121, 21);
+            this.StoreType.TabIndex = 7;
+            this.StoreType.ValueMember = "ItemNo";
+            // 
+            // fileParseSettingModelBindingSource
+            // 
+            this.fileParseSettingModelBindingSource.DataSource = typeof(CatalogParser.Models.FileParseSettingModel);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(539, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Город:";
+            // 
+            // City
+            // 
+            this.City.Location = new System.Drawing.Point(585, 3);
+            this.City.Name = "City";
+            this.City.Size = new System.Drawing.Size(100, 20);
+            this.City.TabIndex = 9;
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Location = new System.Drawing.Point(691, 3);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(75, 20);
+            this.SaveBtn.TabIndex = 10;
+            this.SaveBtn.Text = "Сохранить";
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
+            // 
+            // DelBtn
+            // 
+            this.DelBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.DelBtn.Location = new System.Drawing.Point(772, 3);
+            this.DelBtn.Name = "DelBtn";
+            this.DelBtn.Size = new System.Drawing.Size(75, 20);
+            this.DelBtn.TabIndex = 11;
+            this.DelBtn.Text = "Удалить";
+            this.DelBtn.UseVisualStyleBackColor = false;
+            this.DelBtn.Click += new System.EventHandler(this.DelBtn_Click);
             // 
             // FileParseSetting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.DelBtn);
+            this.Controls.Add(this.SaveBtn);
+            this.Controls.Add(this.City);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.StoreType);
+            this.Controls.Add(this.Quantity);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.ItemNo);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.OpenFileBtn);
+            this.Controls.Add(this.FileNameField);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
             this.Name = "FileParseSetting";
-            this.Size = new System.Drawing.Size(771, 174);
+            this.Size = new System.Drawing.Size(917, 25);
+            ((System.ComponentModel.ISupportInitialize)(this.fileParseSettingModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -86,9 +184,19 @@ namespace CatalogParser
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private TextBox textBox2;
+        private OpenFileDialog openFileDialog;
+        private Label label1;
+        public TextBox FileNameField;
+        private Button OpenFileBtn;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        public TextBox ItemNo;
+        public TextBox Quantity;
+        public ComboBox StoreType;
+        public TextBox City;
+        private Button SaveBtn;
+        private Button DelBtn;
+        private BindingSource fileParseSettingModelBindingSource;
     }
 }
