@@ -124,7 +124,7 @@ namespace CatalogParser
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(539, 6);
+            this.label4.Location = new System.Drawing.Point(3, 35);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 13);
             this.label4.TabIndex = 8;
@@ -132,14 +132,14 @@ namespace CatalogParser
             // 
             // City
             // 
-            this.City.Location = new System.Drawing.Point(585, 3);
+            this.City.Location = new System.Drawing.Point(49, 32);
             this.City.Name = "City";
             this.City.Size = new System.Drawing.Size(100, 20);
             this.City.TabIndex = 9;
             // 
             // SaveBtn
             // 
-            this.SaveBtn.Location = new System.Drawing.Point(691, 3);
+            this.SaveBtn.Location = new System.Drawing.Point(155, 32);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(75, 20);
             this.SaveBtn.TabIndex = 10;
@@ -150,7 +150,7 @@ namespace CatalogParser
             // DelBtn
             // 
             this.DelBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.DelBtn.Location = new System.Drawing.Point(772, 3);
+            this.DelBtn.Location = new System.Drawing.Point(236, 32);
             this.DelBtn.Name = "DelBtn";
             this.DelBtn.Size = new System.Drawing.Size(75, 20);
             this.DelBtn.TabIndex = 11;
@@ -175,7 +175,7 @@ namespace CatalogParser
             this.Controls.Add(this.FileNameField);
             this.Controls.Add(this.label1);
             this.Name = "FileParseSetting";
-            this.Size = new System.Drawing.Size(917, 25);
+            this.Size = new System.Drawing.Size(557, 60);
             ((System.ComponentModel.ISupportInitialize)(this.fileParseSettingModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
