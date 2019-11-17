@@ -1,4 +1,6 @@
-﻿namespace CatalogParser
+﻿using CatalogParser.Windows.FileParseSettings;
+
+namespace CatalogParser
 {
     partial class Form1
     {
@@ -65,7 +67,7 @@
             // 
             // fileParseSettingBindingSource
             // 
-            this.fileParseSettingBindingSource.DataSource = typeof(CatalogParser.FileParseSetting);
+            this.fileParseSettingBindingSource.DataSource = typeof(FileParseSetting);
             // 
             // fileParseSettingModelBindingSource
             // 

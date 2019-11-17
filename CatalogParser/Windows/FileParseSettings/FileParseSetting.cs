@@ -1,10 +1,10 @@
-﻿using CatalogParser.Enums;
-using CatalogParser.Extensions;
-using System;
+﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using CatalogParser.Enums;
+using CatalogParser.Extensions;
 
-namespace CatalogParser
+namespace CatalogParser.Windows.FileParseSettings
 {
     public partial class FileParseSetting : UserControl
     {

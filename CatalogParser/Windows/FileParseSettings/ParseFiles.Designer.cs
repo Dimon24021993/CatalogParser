@@ -1,4 +1,4 @@
-﻿namespace CatalogParser
+﻿namespace CatalogParser.Windows.FileParseSettings
 {
     partial class ParseFiles
     {
@@ -56,17 +56,17 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 153);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 60);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(899, 292);
+            this.dataGridView1.Size = new System.Drawing.Size(899, 385);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // fileParseSettingBindingSource
             // 
-            this.fileParseSettingBindingSource.DataSource = typeof(CatalogParser.FileParseSetting);
+            this.fileParseSettingBindingSource.DataSource = typeof(CatalogParser.Windows.FileParseSettings.FileParseSetting);
             // 
             // fileParseSettingModelBindingSource
             // 

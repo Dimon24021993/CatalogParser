@@ -1,5 +1,6 @@
 ﻿using CatalogParser.Enums;
 using CatalogParser.Models;
+using CatalogParser.Windows.FileParseSettings;
 using System;
 using System.Collections.Generic;
 using System.IO;

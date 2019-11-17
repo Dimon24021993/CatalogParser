@@ -1,11 +1,11 @@
-﻿using CatalogParser.Enums;
-using CatalogParser.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using CatalogParser.Enums;
+using CatalogParser.Models;
 
-namespace CatalogParser
+namespace CatalogParser.Windows.FileParseSettings
 {
     public partial class ParseFiles : UserControl, ISaver
     {

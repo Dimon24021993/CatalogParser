@@ -94,6 +94,7 @@
             this.итогиToolStripMenuItem.Name = "итогиToolStripMenuItem";
             this.итогиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.итогиToolStripMenuItem.Text = "Итоги";
+            this.итогиToolStripMenuItem.Click += new System.EventHandler(this.OpenTotals);
             // 
             // flowLayoutPanel1
             // 
@@ -102,7 +103,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(800, 426);
             this.flowLayoutPanel1.TabIndex = 2;
-            this.flowLayoutPanel1.Resize += new System.EventHandler(this.flowLayoutPanel1_Resize);
+            this.flowLayoutPanel1.Resize += new System.EventHandler(this.FlowLayoutPanel1_Resize);
             // 
             // MainForm
             // 

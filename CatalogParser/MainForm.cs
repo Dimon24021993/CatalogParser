@@ -1,12 +1,20 @@
-﻿using System;
+﻿using CatalogParser.Windows.FileParseSettings;
+using CatalogParser.Windows.Replaces;
+using CatalogParser.Windows.Totals;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace CatalogParser
 {
     public partial class MainForm : Form
     {
-        private readonly Replaces Replaces = new Replaces();
-        private readonly ParseFiles ParseFiles = new ParseFiles();
+        private readonly Replace replaces = new Replace();
+        private readonly ParseFiles parseFiles = new ParseFiles();
+        private readonly Totals totals = new Totals();
+
+        private IEnumerable<Control> ControlsList => new Control[] { replaces, totals, parseFiles };
+
         public MainForm()
         {
             InitializeComponent();
@@ -15,8 +23,7 @@ namespace CatalogParser
         private void PriceToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ClearControls();
-            ParseFiles.Width = flowLayoutPanel1.Bounds.Width;
-            flowLayoutPanel1.Controls.Add(ParseFiles);
+            flowLayoutPanel1.Controls.Add(parseFiles);
         }
 
         private void ExitToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -27,8 +34,7 @@ namespace CatalogParser
         private void ReplacesToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ClearControls();
-            Replaces.Width = flowLayoutPanel1.Bounds.Width;
-            flowLayoutPanel1.Controls.Add(Replaces);
+            flowLayoutPanel1.Controls.Add(replaces);
         }
 
 
@@ -36,8 +42,11 @@ namespace CatalogParser
         {
             foreach (Control control in flowLayoutPanel1.Controls)
             {
-                if (control is ISaver) (control as ISaver).SaveSettings();
+                if (control is ISaver saver) saver.SaveSettings();
+
             }
+
+            FlowLayoutPanel1_Resize(null, null);
             flowLayoutPanel1.Controls.Clear();
         }
 
@@ -46,14 +55,21 @@ namespace CatalogParser
             ClearControls();
         }
 
-        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+
+        private void FlowLayoutPanel1_Resize(object sender, EventArgs e)
         {
-            foreach (Control control in flowLayoutPanel1.Controls)
+            foreach (var control in ControlsList)
             {
                 control.Width = flowLayoutPanel1.Bounds.Width;
-
+                control.Height = flowLayoutPanel1.Bounds.Height;
             }
+        }
 
+        private void OpenTotals(object sender, EventArgs e)
+        {
+            ClearControls();
+            totals.Open(parseFiles.Settings, replaces.SettingsOrig);
+            flowLayoutPanel1.Controls.Add(totals);
         }
     }
 }

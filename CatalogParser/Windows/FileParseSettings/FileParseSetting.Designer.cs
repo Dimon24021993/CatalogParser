@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace CatalogParser
+namespace CatalogParser.Windows.FileParseSettings
 {
     partial class FileParseSetting
     {
@@ -47,6 +47,10 @@ namespace CatalogParser
             this.DelBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileParseSettingModelBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "Excell files(*.xlsx)|*.xlsx|Excell files(*.xls)|*.xls";
             // 
             // label1
             // 
