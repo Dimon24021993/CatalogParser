@@ -1,9 +1,9 @@
-﻿using System;
+﻿using CatalogParser.Enums;
+using CatalogParser.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
-using CatalogParser.Enums;
-using CatalogParser.Models;
 
 namespace CatalogParser.Windows.FileParseSettings
 {
@@ -55,6 +55,7 @@ namespace CatalogParser.Windows.FileParseSettings
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             var setting = Settings[e.RowIndex];
             var fileParseSetting = (FileParseSetting)tableLayoutPanel1.Controls[0];
 
@@ -64,8 +65,6 @@ namespace CatalogParser.Windows.FileParseSettings
             fileParseSetting.FilePath = setting.FilePath;
             fileParseSetting.FileNameField.Text = Path.GetFileName(setting.FilePath);
             fileParseSetting.StoreType.SelectedValue = (int)setting.StoreType;
-
-
         }
     }
 }

@@ -16,5 +16,12 @@ namespace CatalogParser.Windows.Replaces
         {
             OnSearch?.Invoke(textBox1.Text);
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\r') return;
+
+            OnSearch?.Invoke(textBox1.Text);
+        }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,21 +79,21 @@
             // прайсыToolStripMenuItem1
             // 
             this.прайсыToolStripMenuItem1.Name = "прайсыToolStripMenuItem1";
-            this.прайсыToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.прайсыToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
             this.прайсыToolStripMenuItem1.Text = "Прайсы";
             this.прайсыToolStripMenuItem1.Click += new System.EventHandler(this.PriceToolStripMenuItem1_Click);
             // 
             // заменыToolStripMenuItem1
             // 
             this.заменыToolStripMenuItem1.Name = "заменыToolStripMenuItem1";
-            this.заменыToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.заменыToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
             this.заменыToolStripMenuItem1.Text = "Замены";
             this.заменыToolStripMenuItem1.Click += new System.EventHandler(this.ReplacesToolStripMenuItem1_Click);
             // 
             // итогиToolStripMenuItem
             // 
             this.итогиToolStripMenuItem.Name = "итогиToolStripMenuItem";
-            this.итогиToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.итогиToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.итогиToolStripMenuItem.Text = "Итоги";
             this.итогиToolStripMenuItem.Click += new System.EventHandler(this.OpenTotals);
             // 
@@ -112,8 +113,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "CatalogParser";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

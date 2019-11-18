@@ -66,11 +66,10 @@ namespace CatalogParser.Windows.Replaces
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                var setting = Settings[e.RowIndex];
-                replaceEdit.OpenEdit(setting);
-            }
+            if (e.RowIndex < 0) return;
+
+            var setting = Settings[e.RowIndex];
+            replaceEdit.OpenEdit(setting);
         }
     }
 }

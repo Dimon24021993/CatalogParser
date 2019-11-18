@@ -23,6 +23,7 @@ namespace CatalogParser.Windows.Totals
                     DataList = DataListOrig.Where(x =>
                         x.ItemNo.ToUpperInvariant().Contains(searchText.ToUpperInvariant())
                         || x.City.ToUpperInvariant().Contains(searchText.ToUpperInvariant())).ToList();
+                    RefreshTableBinding();
                 };
             totalsControls1.OnParse += TotalsControls1_OnParse;
             totalsControls1.OnExport += TotalsControls1_OnExport;

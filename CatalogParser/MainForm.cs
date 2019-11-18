@@ -18,6 +18,7 @@ namespace CatalogParser
         public MainForm()
         {
             InitializeComponent();
+            OpenTotals(null, null);
         }
 
         private void PriceToolStripMenuItem1_Click(object sender, EventArgs e)
