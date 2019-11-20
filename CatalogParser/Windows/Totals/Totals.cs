@@ -77,6 +77,7 @@ namespace CatalogParser.Windows.Totals
                 progressBar.Value = Convert.ToInt32(totalProgress);
             }
 
+            MessageBox.Show("Готово", "Парсинг завершен", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (!tempData.Any())
             {
                 DataList = DataListOrig = new List<TotalsModel>();

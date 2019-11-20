@@ -1,11 +1,11 @@
 ﻿using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using OfficeOpenXml.Style;
 
 namespace CatalogParser.Extensions
 {
@@ -28,8 +28,8 @@ namespace CatalogParser.Extensions
                     {
                         if (ws == null)
                             throw new Exception("Nothing to parse");
-
-                        while (ws.Cells[row, 1].Value != null)
+                        var minCol = bindingProps.Select(x => (int)x.GetValue(bindObject)).Min();
+                        while (ws.Cells[row, minCol].Value != null)
                         {
                             var item = Activator.CreateInstance<T>();
                             foreach (var t in props)
@@ -47,12 +47,12 @@ namespace CatalogParser.Extensions
                             row++;
                         }
                     }
-                    return items;
                 }
                 catch (Exception e)
                 {
                     throw e;
                 }
+                return items;
             }
         }
 
